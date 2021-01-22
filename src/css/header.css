@@ -1,0 +1,57 @@
+.container-header {
+  background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.8));
+  box-shadow: 0px 1px 10px 0.5px rgba(0, 0, 0, 0.8);
+  grid-area: header;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+}
+
+.container-icon-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 300px;
+  margin-right: 2em;
+}
+
+.container-icon-title img {
+  width: 4em;
+  height: 3.5em;
+  filter: blur(0.5px);
+}
+
+.container-icon-title h1 {
+  font-family: "Overlock", cursive;
+  font-size: 1.5em;
+  font-weight: 400;
+  color: #f8f1f1;
+}
+
+.container-sections {
+  display: flex;
+  width: 400px;
+  margin-left: 2em;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.container-sections a {
+  text-decoration: none;
+  font-size: 1.2em;
+  color: #f8f1f1;
+  /* font-family: "Quicksand", sans-serif; */
+  font-family: "Overlock", cursive;
+  letter-spacing: -1px;
+  transition-property: font-size, letter-spacing;
+  transition-duration: 0.5s;
+}
+
+.container-sections a:hover {
+  font-size: 1.3em;
+  letter-spacing: 1px;
+}

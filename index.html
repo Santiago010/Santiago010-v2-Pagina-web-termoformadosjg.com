@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Overlock&family=Quicksand&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+      integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="src/css/header.css" />
+    <link rel="stylesheet" href="src/css/index.css" />
+    <link rel="stylesheet" href="src/css/products.css" />
+    <link rel="stylesheet" href="src/css/contact.css" />
+    <link
+      rel="shortcut icon"
+      href="src/docs/icon-termoformados-jg.ico"
+      type="image/x-icon"
+    />
+    <title>Termoformados JG</title>
+  </head>
+  <body>
+    <div class="grid-container">
+      <div class="container-header">
+        <div class="container-icon-title">
+          <img src="src/docs/icon-termoformados-jg.ico" alt="Termoformados" />
+          <h1>
+            Termoformados <br />
+            & Troquelados
+          </h1>
+        </div>
+        <nav class="container-sections">
+          <a href="#">Inicio</a>
+          <a href="#container-products">Productos</a>
+          <a href="#container-contact">Contactenos</a>
+        </nav>
+      </div>
+      <div class="container-images">
+        <p class="paragraph-product"></p>
+        <p class="parapraph-info">Material. Plastico Reciclado</p>
+        <a class="link-product" href="#container-products"
+          >Más información &#62;</a
+        >
+        <img src="src/docs/Sin título-1.png" alt="" loading="lazy" />
+      </div>
+      <div class="container-products" id="container-products">
+        <div class="container-btns-products">
+          <button class="btns-products">Cunas</button>
+          <button class="btns-products">Exhibidores</button>
+          <button class="btns-products">Probadores</button>
+          <button class="btns-products">Estuches</button>
+          <button class="btns-products">Empaques Blister</button>
+          <button class="btns-products">Moldes</button>
+        </div>
+        <div class="container-images-products">
+          <div class="box-image">
+            <img
+              class="image-product"
+              data-lazy="src/docs/index1.png"
+              alt="Cunas"
+            />
+          </div>
+          <div class="box-image">
+            <img
+              class="image-product"
+              data-lazy="src/docs/index2.png"
+              alt="Cunas"
+            />
+          </div>
+          <div class="line-separator"></div>
+          <div class="box-image">
+            <img
+              class="image-product"
+              data-lazy="src/docs/index3.png"
+              alt="Cunas"
+            />
+          </div>
+          <div class="box-image">
+            <img
+              class="image-product"
+              data-lazy="src/docs/index4.png"
+              alt="Cunas"
+            />
+          </div>
+        </div>
+        <div class="container-paragraph-description">
+          <p>
+            Cunas porta ampolletas y porta frascos, fabricados en materiales PET
+            cristal o poliestireno blanco, evite que sus ampollas se estropeen
+            en el transporte.
+          </p>
+        </div>
+      </div>
+      <div class="container-contact" id="container-contact">
+        <div class="container-form">
+          <form action="/send-email" method="POST">
+            <p class="paragraph-form">Formulario De Contacto</p>
+            <div class="section-form">
+              <i class="fas fa-user"></i>
+              <input
+                type="text"
+                name="nombre"
+                class="input-form"
+                placeholder="nombre"
+              />
+            </div>
+            <div class="section-form">
+              <i class="fas fa-envelope"></i>
+              <input
+                type="text"
+                name="correo"
+                class="input-form"
+                placeholder="correo"
+              />
+            </div>
+            <div class="section-form">
+              <i class="fas fa-phone-square"></i>
+              <input
+                type="text"
+                name="telefono"
+                class="input-form"
+                placeholder="telefono"
+              />
+            </div>
+            <div class="section-form">
+              <i class="fas fa-comments"></i>
+              <textarea
+                name="mensaje"
+                class="textarea-form"
+                placeholder="mensaje"
+              ></textarea>
+            </div>
+            <button class="btn-send">Enviar</button>
+          </form>
+        </div>
+        <div class="container-data-contact">
+          <h2>Informacion de Contacto</h2>
+          <ul class="list-contact">
+            <li>
+              <p>Teléfono: 9018216 Cel: 3114616533 / 3102552544</p>
+            </li>
+            <li>
+              <p>Email: Termoformados.jg@hotmail.com</p>
+            </li>
+            <li>
+              <p>Dirección: Calle 32 b # 19-09 Este.</p>
+            </li>
+            <li class="social-media-item">
+              <p>Redes Sociales:</p>
+              <i class="fab fa-instagram icon-social-media"></i>
+              <i class="fab fa-facebook-square icon-social-media"></i>
+            </li>
+          </ul>
+        </div>
+        <footer class="container-footer">
+          <div class="box-recycle">
+            <i class="fas fa-recycle"></i>
+            <p>Materiales 100% recuperados</p>
+          </div>
+          <span
+            >Termoformados &amp; Troquelados. Todos los derechos
+            reservados</span
+          >
+          <span
+            >Diseño y Desarrollo de la página. Contacto:
+            santiago.dev06@gmail.com</span
+          >
+        </footer>
+      </div>
+      <script type="module" src="src/js/main.js"></script>
+    </div>
+  </body>
+</html>
