@@ -1,0 +1,97 @@
+{
+  "dataIndex": {
+    "0": {
+      "img": "/src/docs/index0.png",
+      "name": "Probadores",
+      "description": "Es un un cosa pra probar productos de belleza"
+    },
+    "1": {
+      "img": "/src/docs/index1.png",
+      "name": "Estuche",
+      "description": "Es una cosa  para guardar productos de belleza"
+    },
+    "2": {
+      "img": "/src/docs/index2.png",
+      "name": "Cuna Porta ampolleta",
+      "description": "Es una cosa para portar ampolletas"
+    },
+    "3": {
+      "img": "/src/docs/index3.png",
+      "name": "Exhibidores Punto de Venta",
+      "description": "Es un cosa para exhibir productos de belleza"
+    }
+  },
+  "dataProducts": {
+    "0": {
+      "img": [
+        "/src/docs/cuna-0.png",
+        "/src/docs/cuna-1.png",
+        "/src/docs/cuna-2.png",
+        "/src/docs/cuna-3.png"
+      ],
+      "name": "Cunas",
+      "description": "Cunas porta ampolletas y porta frascos, fabricados en materiales PET cristal o poliestireno blanco, evite que sus ampollas se estropeen en el transporte."
+    },
+    "1": {
+      "img": [
+        "/src/docs/exhibidor-0.png",
+        "/src/docs/exhibidor-1.png",
+        "/src/docs/exhibidor-2.png",
+        "/src/docs/exhibidor-3.png"
+      ],
+      "name": "Exhibidores",
+      "description": "Exhibidores para puntos de venta, manejamos amplia gama de colores, en diferentes materiales y calibres, Exhiba sus productos de forma organizada y aumente sus ventas."
+    },
+    "2": {
+      "img": [
+        "/src/docs/probador-0.png",
+        "/src/docs/probador-1.png",
+        "/src/docs/probador-2.png",
+        "/src/docs/probador-3.png"
+      ],
+      "name": "Probadores",
+      "description": "Probadores para puntos de venta e impulsadoras, para promocionar su producto y la calidad, Puede personalizar su marca."
+    },
+    "3": {
+      "img": [
+        "/src/docs/estuche-0.png",
+        "/src/docs/estuche-1.png",
+        "/src/docs/estuche-2.png",
+        "/src/docs/estuche-3.png"
+      ],
+      "name": "Estuches",
+      "description": "Estuches amplia gama de colores y calibres para empacar su producto terminado y darle mejor presentación y protección."
+    },
+    "4": {
+      "img": [
+        "/src/docs/empaque-blister-0.png",
+        "/src/docs/empaque-blister-1.png",
+        "/src/docs/empaque-blister-2-png",
+        "/src/docs/empaque-blister-3.png"
+      ],
+      "name": "Empaques Blister",
+      "description": "El Empaque Blíster es utilizado para exhibir un producto, sin que el contenido sea manipulado por el comprador y mostrando elegancia y posicionamiento de marca."
+    },
+    "5": {
+      "img": [
+        "/src/docs/molde-0.png",
+        "/src/docs/molde-1.png",
+        "/src/docs/molde-2.png",
+        "/src/docs/molde-3.png"
+      ],
+      "name": "Moldes",
+      "description": "Diseñamos y fabricamos los Moldes en su totalidad, en las instalaciones de nuestra compañía, así mismo podemos  elaborar la muestrafísica, de su proyecto."
+    },
+    "6": {
+      "img": [
+        "/src/docs/cuna-0.png",
+        "/src/docs/exhibidor-0.png",
+        "/src/docs/probador-0.png",
+        "/src/docs/estuche-0.png",
+        "/src/docs/empaque-blister-0.png",
+        "/src/docs/molde-0.png"
+      ],
+      "description": "Esta es un pequeña galeria"
+    }
+  }
+}

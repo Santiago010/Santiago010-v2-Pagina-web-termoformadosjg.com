@@ -11,24 +11,15 @@
 
 .container-form {
   box-shadow: 0px 0px 5px 0.5px rgba(0, 0, 0, 0.8);
-  background-image: url(../docs/_1440990.JPG);
+  background-image: url(../docs/termoformados.jpg);
   background-repeat: no-repeat;
   background-size: 100% 100%;
   background-attachment: local;
   border-bottom-left-radius: 0.7em;
   border-top-right-radius: 0.7em;
-  width: 900px;
-  height: 500px;
+  min-width: 900px;
   display: flex;
   justify-content: flex-end;
-}
-
-.paragraph-form {
-  font-family: "Overlock", cursive;
-  font-size: 2em;
-  font-weight: 600;
-  letter-spacing: -1px;
-  color: rgba(0, 0, 0, 0.8);
 }
 
 .container-form form {
@@ -39,6 +30,14 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.paragraph-form {
+  font-family: "Overlock", cursive;
+  font-size: 2em;
+  font-weight: 600;
+  letter-spacing: -1px;
+  color: rgba(0, 0, 0, 0.8);
 }
 
 .section-form {
@@ -167,7 +166,7 @@
 .container-data-contact h2 {
   margin-bottom: 1em;
   font-family: "Overlock", cursive;
-  font-size: 1.5;
+  font-size: 1.5em;
   font-weight: 700;
   color: rgba(0, 0, 0, 0.8);
   letter-spacing: 1.2px;
@@ -238,5 +237,154 @@
     font-size: 3.55em;
     color: #2cff01;
     text-shadow: 0px 0px 5px #2cff01;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .container-contact {
+    padding-top: 6em;
+    justify-content: space-around;
+  }
+
+  .container-form {
+    border-radius: 0.7em;
+    min-width: 600px;
+    display: flex;
+    flex-direction: column;
+  }
+  .paragraph-form {
+    font-size: 3em;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.9);
+    text-align: center;
+  }
+
+  .container-form form {
+    border-radius: 0.7em;
+    background-color: rgba(255, 255, 255, 0.6);
+    width: 100%;
+    display: flex;
+  }
+
+  .input-form {
+    font-size: 1.5em;
+  }
+
+  .textarea-form {
+    height: 18vh;
+    padding: 1em;
+    font-size: 1.5em;
+  }
+
+  .btn-send {
+    font-weight: 600;
+    font-size: 1.7em;
+    margin-top: 1.1em;
+    padding: 1.2em 2.2em;
+    border-radius: 0.4em;
+    background-color: #0066cc;
+  }
+
+  .btn-send:hover {
+    padding: 1.4em 2.4em;
+    letter-spacing: 1.5px;
+  }
+
+  .fa-user,
+  .fa-envelope,
+  .fa-phone-square,
+  .fa-comments {
+    font-size: 2.2em;
+  }
+
+  .fa-instagram,
+  .fa-facebook-square {
+    font-size: 4em;
+    margin-right: 0.4em;
+  }
+
+  .fa-instagram:hover {
+    font-size: 2.2em;
+  }
+
+  .fa-facebook-square:hover {
+    font-size: 2.2em;
+  }
+
+  .container-data-contact h2 {
+    font-size: 2.5em;
+  }
+
+  .box-recycle {
+    margin-bottom: 1.2em 0;
+  }
+
+  .box-recycle p {
+    font-size: 1.7em;
+  }
+
+  .container-footer span {
+    margin-top: 0.5em;
+    text-align: center;
+    font-size: 1.5em;
+  }
+
+  .fa-recycle {
+    font-size: 4em;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .input-form {
+    font-size: 2em;
+  }
+
+  .textarea-form {
+    font-size: 2em;
+  }
+
+  .btn-send {
+    font-size: 1.8em;
+    margin-top: 1.3em;
+  }
+
+  .fa-user,
+  .fa-envelope,
+  .fa-phone-square,
+  .fa-comments {
+    font-size: 2.4em;
+  }
+  .fa-instagram,
+  .fa-facebook-square {
+    font-size: 5em;
+  }
+
+  .fa-instagram:hover {
+    font-size: 2.5em;
+  }
+
+  .fa-facebook-square:hover {
+    font-size: 2.5em;
+  }
+
+  .container-data-contact h2 {
+    font-size: 2.7em;
+  }
+
+  .list-contact li p {
+    font-size: 2.2em;
+  }
+
+  .box-recycle p {
+    font-size: 2em;
+  }
+
+  .container-footer span {
+    text-align: center;
+    font-size: 1.7em;
+  }
+
+  .fa-recycle {
+    font-size: 4.5em;
   }
 }

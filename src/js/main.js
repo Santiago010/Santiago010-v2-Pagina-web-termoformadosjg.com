@@ -1,46 +1,53 @@
-import {
-  containerImages,
-  btnsProduct,
-  imageProduct,
-  containerParagraphDescription,
-  iconSocialMedia,
-} from "./elements.js";
+const containerImage = document.querySelector(".container-images");
+const btnsProduct = document.querySelectorAll(".btns-products");
+const containerImagesProducts = document.querySelector(
+  ".container-images-products"
+);
 
-import {
-  arrayUrlsSocialMedia,
-  arrayImageIndex,
-  arrayDescriptionProduct,
-  arrayNameProduct,
-  arrayImageProduct,
-} from "./data.js";
-
-const imageUrl = arrayImageIndex.map((Array) => Array.image);
-const nameImage = arrayImageIndex.map((Array) => Array.name);
-
-iconSocialMedia.forEach((Element, index) => {
-  Element.addEventListener("click", () => {
-    window.open(arrayUrlsSocialMedia[index]);
+const reqData = (url = "/src/js/data.json") => {
+  return new Promise((resolve, reject) => {
+    fetch(url)
+      .then((res) => res.json())
+      .then((data) => resolve(data))
+      .catch((error) => reject(error));
   });
-});
+};
+
+let data;
+
+const removeChildren = () => {
+  containerImagesProducts.childNodes.forEach((children) => {
+    containerImagesProducts.removeChild(children);
+  });
+};
 
 window.addEventListener("load", () => {
-  const changeImage = () => {
-    let random = Math.floor(Math.random() * arrayImageIndex.length);
-    containerImages.firstElementChild.textContent = nameImage[random];
-    containerImages.lastElementChild.src = imageUrl[random];
-    containerImages.lastElementChild.setAttribute("alt", nameImage[random]);
+  const changeImage = async (quantity = 4) => {
+    let random = Math.floor(Math.random() * quantity);
+    try {
+      data = await reqData();
+      containerImage.firstElementChild.textContent =
+        data.dataIndex[random].name;
+      containerImage.children[1].textContent =
+        data.dataIndex[random].description;
+      containerImage.lastElementChild.src = data.dataIndex[random].img;
+      containerImage.lastElementChild.setAttribute(
+        "alt",
+        data.dataIndex[random].name
+      );
+    } catch (error) {
+      console.error(error);
+    }
   };
 
-  setInterval(changeImage, 3000);
+  setInterval(changeImage, 2000);
 });
 
 btnsProduct.forEach((Element, index) => {
-  if (index === 6) {
-    return;
-  }
-
-  Element.addEventListener("click", () => {
+  if (index === 7) return;
+  Element.onclick = async () => {
     let observerColorBtn;
+
     if (btnsProduct[0].classList.contains("select")) {
       observerColorBtn = 0;
     } else if (btnsProduct[1].classList.contains("select")) {
@@ -53,38 +60,35 @@ btnsProduct.forEach((Element, index) => {
       observerColorBtn = 4;
     } else if (btnsProduct[5].classList.contains("select")) {
       observerColorBtn = 5;
+    } else if (btnsProduct[6].classList.contains("select")) {
+      observerColorBtn = 6;
     }
-
     if (observerColorBtn !== undefined) {
       btnsProduct[observerColorBtn].classList.remove("select");
     }
-
     Element.classList.add("select");
-    imageProduct.forEach((Element2, index2) => {
-      Element2.setAttribute("src", arrayImageProduct[index][index2]);
-      Element2.setAttribute("alt", arrayNameProduct[index]);
-      containerParagraphDescription.firstElementChild.textContent =
-        arrayDescriptionProduct[index];
-    });
-  });
-});
+    try {
+      data = await reqData();
+      const docFragmentSecundary = document.createDocumentFragment(),
+        docFragmentPrimary = document.createDocumentFragment();
 
-imageProduct.forEach((Element) => {
-  const observerImage = new IntersectionObserver(
-    (entries, observer) => {
-      entries
-        .filter((entry) => entry.isIntersecting)
-        .forEach((entry) => {
-          const img = entry.target;
-          const src = img.getAttribute("data-lazy");
-
-          img.setAttribute("src", src);
-          observer.disconnect();
-        });
-    },
-    {
-      threshold: 0.2,
+      data.dataProducts[index].img.map((img) => {
+        removeChildren();
+        const boxImage = document.createElement("div");
+        boxImage.classList.add("box-image");
+        const imageProduct = document.createElement("img");
+        imageProduct.classList.add("image-product");
+        imageProduct.setAttribute("alt", data.dataProducts[index].name);
+        imageProduct.src = img;
+        docFragmentPrimary.appendChild(imageProduct);
+        boxImage.appendChild(docFragmentPrimary);
+        docFragmentSecundary.appendChild(boxImage);
+      });
+      containerImagesProducts.appendChild(docFragmentSecundary);
+      containerImagesProducts.parentElement.lastElementChild.innerHTML =
+        data.dataProducts[index].description;
+    } catch (error) {
+      console.error(error);
     }
-  );
-  observerImage.observe(Element);
+  };
 });

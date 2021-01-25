@@ -1,18 +1,17 @@
 .container-images {
-  height: 100vh;
   width: 100%;
-  padding-top: 5.5em;
   grid-area: images;
   background-color: #fbfbfd;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: center;
 }
 
 .paragraph-product {
   text-transform: uppercase;
   font-family: "Quicksand", sans-serif;
+  color: #1d1d1f;
   font-weight: 600;
   font-size: 2.2em;
   letter-spacing: 2.5px;
@@ -21,30 +20,46 @@
 .parapraph-info {
   margin: 0.5em 0;
   font-family: "Open Sans", sans-serif;
+  color: #37373b;
+  text-shadow: 0px 1px 0.1em #37373b;
   font-weight: 400;
   font-size: 1.3em;
   line-height: 25px;
   letter-spacing: -0.5px;
 }
 
-.link-product {
-  font-family: "Open Sans", sans-serif;
-  text-decoration: none;
-  color: #0066cc;
-  font-weight: 400;
-  line-height: 29px;
-  font-size: 1.1em;
-  transition-property: text-decoration;
-  transition-duration: 0.5s;
-}
-
-.link-product:hover {
-  text-decoration: underline;
-}
 .container-images img {
   object-fit: scale-down;
   filter: drop-shadow(1px 1px 8px #292828);
   margin: 3em 0;
-  width: 700px;
-  height: 350px;
+  width: 800px;
+  height: 450px;
+}
+
+@media screen and (min-width: 800px) {
+  .container-images {
+    height: 100vh;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .container-images {
+    justify-content: center;
+    padding: 0 0 1em 0;
+  }
+  .paragraph-product {
+    font-size: 3.5em;
+    text-align: center;
+  }
+
+  .parapraph-info {
+    font-size: 2.5em;
+    line-height: 1em;
+    text-align: center;
+  }
+
+  .container-images img {
+    width: 100%;
+    height: 500px;
+  }
 }

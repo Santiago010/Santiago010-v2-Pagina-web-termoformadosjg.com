@@ -3,9 +3,11 @@
   box-shadow: 0px 1px 10px 0.5px rgba(0, 0, 0, 0.8);
   grid-area: header;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  position: fixed;
+  position: sticky;
+  top: 0;
   z-index: 1;
   width: 100%;
 }
@@ -13,9 +15,9 @@
 .container-icon-title {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
-  width: 300px;
+  width: 400px;
   margin-right: 2em;
 }
 
@@ -44,7 +46,6 @@
   text-decoration: none;
   font-size: 1.2em;
   color: #f8f1f1;
-  /* font-family: "Quicksand", sans-serif; */
   font-family: "Overlock", cursive;
   letter-spacing: -1px;
   transition-property: font-size, letter-spacing;
@@ -54,4 +55,55 @@
 .container-sections a:hover {
   font-size: 1.3em;
   letter-spacing: 1px;
+}
+
+@media screen and (max-width: 800px) {
+  .container-header {
+    padding: 1em 0;
+  }
+  .container-icon-title {
+    width: 50%;
+  }
+
+  .container-icon-title img {
+    width: 6em;
+    height: 5em;
+  }
+
+  .container-icon-title h1 {
+    margin-left: 0.2em;
+    font-size: 2.5em;
+    color: #f8f1f1;
+  }
+
+  .container-sections {
+    margin-top: 2em;
+    width: 50%;
+  }
+
+  .container-sections a {
+    margin: 0 0.7em;
+    font-size: 2em;
+    letter-spacing: 2px;
+  }
+
+  .container-sections a:hover {
+    font-size: 2.2em;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .container-icon-title img {
+    width: 8em;
+    height: 6em;
+  }
+
+  .container-icon-title h1 {
+    font-size: 3.5em;
+    color: #f8f1f1;
+  }
+
+  .container-header {
+    margin-bottom: 5em;
+  }
 }
