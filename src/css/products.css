@@ -1,7 +1,7 @@
 .container-products {
   box-shadow: 0px 0px 10px 0.5px rgba(0, 0, 0, 0.8);
   width: 100%;
-  padding-top: 6em;
+  padding-top: 3.5em;
   grid-area: products;
   background-color: rgba(0, 0, 0, 0.9);
   display: flex;
@@ -11,36 +11,41 @@
 
 .container-notice-user {
   margin-top: 1em;
+  margin-bottom: 0.5em;
   width: 100%;
   height: 10vh;
   text-align: center;
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 2em;
-  font-family: "Quicksand", sans-serif;
-  letter-spacing: 0.1em;
-  line-height: 1em;
-  font-weight: 700;
+}
+
+.container-notice-user span {
+  display: inline;
+  color: #0066cc;
+  font-family: "Open Sans", sans-seri;
+  font-size: 2rem;
+  line-height: 100%;
 }
 
 .container-notice-user i {
+  color: #0066cc;
   animation: animationContainer-notice-user 0.5s
-    cubic-bezier(0.895, 0.03, 0.685, 0.22) infinite alternate-reverse;
+    cubic-bezier(0.35, 0.25, 0.7, 0.53) infinite alternate-reverse;
 }
 
 @keyframes animationContainer-notice-user {
   from {
-    font-size: 1em;
+    font-size: 2.2em;
     text-rendering: geometricPrecision;
-    text-shadow: 0px 0.1em 0.1.2em rgba(255, 255, 255, 0.7);
+    text-shadow: 0px 0.1em 0.1.2em #0066cc;
   }
   to {
-    font-size: 1.2em;
+    font-size: 2.4em;
     text-rendering: optimizeLegibility;
-    text-shadow: 0px 0px 0.1em rgba(255, 255, 255, 0.7);
+    text-shadow: 0px 0px 0.1em #0066cc;
   }
 }
 
 .container-btns-products {
+  margin-top: 2em;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -59,16 +64,7 @@
   outline: none;
   border-radius: 0.2em;
   transition: background-color, color, font-weight, letter-spacing;
-  transition: 0.5s;
-}
-
-.btns-products:hover {
-  background-color: rgba(255, 255, 255, 1);
-  box-shadow: 0px 0px 5px 1px rgba(255, 255, 255, 0.7);
-  font-weight: 600;
-  letter-spacing: 2px;
-  color: rgba(0, 0, 0, 0.8);
-  cursor: pointer;
+  transition-duration: 0.3s;
 }
 
 .select {
@@ -82,7 +78,7 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  margin-top: 3.5em;
+  margin-top: 2.5em;
 }
 
 .box-image {
@@ -114,13 +110,27 @@
   text-align: center;
 }
 
+@media screen and (min-width: 850px) {
+  .btns-products:hover {
+    background-color: rgba(255, 255, 255, 1);
+    box-shadow: 0px 0px 5px 1px rgba(255, 255, 255, 0.7);
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: rgba(0, 0, 0, 0.8);
+    cursor: pointer;
+  }
+}
+
 @media screen and (max-width: 800px) {
   .container-products {
-    padding-top: 12.5em;
+    padding-top: 5em;
   }
-  .container-notice-user i {
-    animation: animationContainer-notice-user 0.5s linear infinite
-      alternate-reverse;
+  .container-btns-products {
+    margin-top: 8em;
+  }
+
+  .container-notice-user {
+    width: 60%;
   }
   .btns-products {
     font-weight: 700;
@@ -153,13 +163,16 @@
 
 @media screen and (max-width: 500px) {
   .container-products {
-    padding-top: 16em;
+    padding-top: 7em;
+  }
+  .container-btns-products {
+    margin-top: 8em;
   }
 
   .btns-products {
     font-weight: 700;
     font-size: 1.5em;
-    padding: 1.3em 3em;
+    padding: 1em 3em;
   }
 
   .container-paragraph-description {

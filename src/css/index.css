@@ -4,7 +4,7 @@
   background-color: #fbfbfd;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
 }
 
@@ -12,16 +12,15 @@
   text-transform: uppercase;
   font-family: "Quicksand", sans-serif;
   color: #1d1d1f;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 2.2em;
-  letter-spacing: 2.5px;
+  letter-spacing: -1px;
 }
 
 .parapraph-info {
   margin: 0.5em 0;
   font-family: "Open Sans", sans-serif;
-  color: #37373b;
-  text-shadow: 0px 1px 0.1em #37373b;
+  color: #0066cc;
   font-weight: 400;
   font-size: 1.3em;
   line-height: 25px;
@@ -36,7 +35,7 @@
   height: 450px;
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 850px) {
   .container-images {
     height: 100vh;
   }

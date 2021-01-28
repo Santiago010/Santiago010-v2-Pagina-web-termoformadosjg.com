@@ -1,8 +1,13 @@
-const containerImage = document.querySelector(".container-images");
-const btnsProduct = document.querySelectorAll(".btns-products");
-const containerImagesProducts = document.querySelector(
-  ".container-images-products"
-);
+import {
+  containerImage,
+  btnsProduct,
+  containerImagesProducts,
+  fab,
+} from "./elements.js";
+
+import sendData from "./sendData.js";
+
+sendData();
 
 const reqData = (url = "/src/js/data.json") => {
   return new Promise((resolve, reject) => {
@@ -14,6 +19,13 @@ const reqData = (url = "/src/js/data.json") => {
 };
 
 let data;
+
+fab.forEach((Element, index) => {
+  Element.addEventListener("click", async () => {
+    data = await reqData();
+    window.open(data.dataSocialMedia[index]);
+  });
+});
 
 const removeChildren = () => {
   containerImagesProducts.childNodes.forEach((children) => {
@@ -40,7 +52,7 @@ window.addEventListener("load", () => {
     }
   };
 
-  setInterval(changeImage, 2000);
+  setInterval(changeImage, 4000);
 });
 
 btnsProduct.forEach((Element, index) => {
@@ -80,9 +92,9 @@ btnsProduct.forEach((Element, index) => {
         imageProduct.classList.add("image-product");
         imageProduct.setAttribute("alt", data.dataProducts[index].name);
         imageProduct.src = img;
+        docFragmentSecundary.appendChild(boxImage);
         docFragmentPrimary.appendChild(imageProduct);
         boxImage.appendChild(docFragmentPrimary);
-        docFragmentSecundary.appendChild(boxImage);
       });
       containerImagesProducts.appendChild(docFragmentSecundary);
       containerImagesProducts.parentElement.lastElementChild.innerHTML =

@@ -60,21 +60,22 @@
           <button class="btns-products">Otros</button>
         </div>
         <div class="container-notice-user">
-          <i class="fas fa-arrow-up"></i>Da Click en un producto para desplegar
-          una galeria<i class="fas fa-arrow-up"></i>
+          <i class="fas fa-long-arrow-alt-up"></i>
+          <span>Da Click en un producto para desplegar una galeria</span>
+          <i class="fas fa-long-arrow-alt-up"></i>
         </div>
         <div class="container-images-products"></div>
         <div class="container-paragraph-description"></div>
       </div>
       <div class="container-contact" id="container-contact">
         <div class="container-form">
-          <form action="/send-email" method="POST">
+          <form id="formData">
             <p class="paragraph-form">Formulario De Contacto</p>
             <div class="section-form">
               <i class="fas fa-user"></i>
               <input
                 type="text"
-                name="nombre"
+                name="name"
                 class="input-form"
                 placeholder="nombre"
               />
@@ -83,7 +84,7 @@
               <i class="fas fa-envelope"></i>
               <input
                 type="text"
-                name="correo"
+                name="email"
                 class="input-form"
                 placeholder="correo"
               />
@@ -92,7 +93,7 @@
               <i class="fas fa-phone-square"></i>
               <input
                 type="text"
-                name="telefono"
+                name="phone"
                 class="input-form"
                 placeholder="telefono"
               />
@@ -100,12 +101,12 @@
             <div class="section-form">
               <i class="fas fa-comments"></i>
               <textarea
-                name="mensaje"
+                name="message"
                 class="textarea-form"
                 placeholder="mensaje"
               ></textarea>
             </div>
-            <button class="btn-send">Enviar</button>
+            <button type="submit" class="btn-send">Enviar</button>
           </form>
         </div>
         <div class="container-data-contact">
@@ -130,8 +131,8 @@
         <footer class="container-footer">
           <div class="box-recycle">
             <i class="fas fa-recycle"></i>
-            <p>Materiales 100% recuperados</p>
           </div>
+          <p class="paragraph-matters">Materiales 100% recuperados</p>
           <span
             >Termoformados &amp; Troquelados. Todos los derechos
             reservados</span
@@ -142,7 +143,8 @@
           >
         </footer>
       </div>
-      <script src="src/js/main.js"></script>
+      <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+      <script type="module" src="src/js/main.js"></script>
     </div>
   </body>
 </html>

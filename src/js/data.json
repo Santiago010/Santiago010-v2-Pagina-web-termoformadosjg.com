@@ -84,14 +84,29 @@
     },
     "6": {
       "img": [
-        "/src/docs/cuna-0.png",
-        "/src/docs/exhibidor-0.png",
-        "/src/docs/probador-0.png",
-        "/src/docs/estuche-0.png",
-        "/src/docs/empaque-blister-0.png",
-        "/src/docs/molde-0.png"
+        "/src/docs/others-1.png",
+        "/src/docs/others-2.png",
+        "/src/docs/others-3.png",
+        "/src/docs/others-4.png",
+        "/src/docs/others-5.png",
+        "/src/docs/others-6.png",
+        "/src/docs/others-7.png",
+        "/src/docs/others-8.png",
+        "/src/docs/others-9.png",
+        "/src/docs/others-10.png",
+        "/src/docs/others-11.png",
+        "/src/docs/others-12.png",
+        "/src/docs/others-13.png",
+        "/src/docs/others-14.png",
+        "/src/docs/others-15.png",
+        "/src/docs/others-16.png",
+        "/src/docs/others-17.png"
       ],
       "description": "Esta es un pequeña galeria"
     }
-  }
+  },
+  "dataSocialMedia": [
+    "https://www.instagram.com/termoformadosjg/?hl=es-la",
+    "https://www.facebook.com/Termoformados-Troquelados-JG-190642551559996/"
+  ]
 }
