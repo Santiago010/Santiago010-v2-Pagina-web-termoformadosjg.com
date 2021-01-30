@@ -33,7 +33,7 @@ export default function sendData() {
               title: "¡Error!",
               text: data.response,
               icon: "error",
-              button: "OK",
+              button: "¡Volver A intentar!",
             });
             break;
         }

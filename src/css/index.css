@@ -1,7 +1,5 @@
 .container-images {
-  width: 100%;
   grid-area: images;
-  background-color: #fbfbfd;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -12,53 +10,103 @@
   text-transform: uppercase;
   font-family: "Quicksand", sans-serif;
   color: #1d1d1f;
-  font-weight: 700;
-  font-size: 2.2em;
   letter-spacing: -1px;
 }
 
 .parapraph-info {
   margin: 0.5em 0;
+  font-weight: 400;
   font-family: "Open Sans", sans-serif;
   color: #0066cc;
-  font-weight: 400;
-  font-size: 1.3em;
-  line-height: 25px;
-  letter-spacing: -0.5px;
+  text-align: center;
 }
 
 .container-images img {
   object-fit: scale-down;
-  filter: drop-shadow(1px 1px 8px #292828);
-  margin: 3em 0;
-  width: 800px;
-  height: 450px;
 }
 
-@media screen and (min-width: 850px) {
+@media screen and (min-width: 800px) {
   .container-images {
     height: 100vh;
+  }
+
+  .paragraph-product {
+    font-weight: 700;
+    font-size: 2.2em;
+  }
+
+  .parapraph-info {
+    font-size: 1.3em;
+    line-height: 25px;
+    letter-spacing: -0.5px;
+  }
+
+  .container-images img {
+    filter: drop-shadow(1px 1px 8px #292828);
+    margin: 3em 0;
+    width: 800px;
+    height: 450px;
   }
 }
 
 @media screen and (max-width: 800px) {
   .container-images {
-    justify-content: center;
-    padding: 0 0 1em 0;
+    height: 60vh;
   }
+
   .paragraph-product {
-    font-size: 3.5em;
-    text-align: center;
+    font-weight: 600;
+    font-size: 2em;
   }
 
   .parapraph-info {
-    font-size: 2.5em;
-    line-height: 1em;
-    text-align: center;
+    font-size: 1.2em;
+    line-height: 20px;
+    letter-spacing: -1px;
   }
 
   .container-images img {
-    width: 100%;
-    height: 500px;
+    filter: drop-shadow(1px 1px 8px #292828);
+    margin: 2em 0;
+    width: 750px;
+    height: 350px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .paragraph-product {
+    font-weight: 500;
+    font-size: 1.8em;
+  }
+
+  .parapraph-info {
+    font-size: 1.2em;
+    line-height: 15px;
+    letter-spacing: -0.5px;
+  }
+  .container-images img {
+    filter: drop-shadow(1px 1px 8px #292828);
+    margin: 2em 0;
+    width: 400px;
+    height: 250px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .paragraph-product {
+    font-weight: 400;
+    font-size: 1.5em;
+  }
+
+  .parapraph-info {
+    font-size: 1em;
+    line-height: 10px;
+    letter-spacing: -0.2px;
+  }
+  .container-images img {
+    filter: drop-shadow(1px 1px 8px #292828);
+    margin: 2em 0;
+    width: 350px;
+    height: 200px;
   }
 }

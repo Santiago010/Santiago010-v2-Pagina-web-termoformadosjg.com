@@ -3,11 +3,11 @@
     "0": {
       "img": "/src/docs/index0.png",
       "name": "Probadores",
-      "description": "Es un un cosa pra probar productos de belleza"
+      "description": "Probadores línea cosmética para puntos de venta."
     },
     "1": {
       "img": "/src/docs/index1.png",
-      "name": "Estuche",
+      "name": "Estuches",
       "description": "Es una cosa  para guardar productos de belleza"
     },
     "2": {
@@ -66,7 +66,7 @@
       "img": [
         "/src/docs/empaque-blister-0.png",
         "/src/docs/empaque-blister-1.png",
-        "/src/docs/empaque-blister-2-png",
+        "/src/docs/empaque-blister-2.png",
         "/src/docs/empaque-blister-3.png"
       ],
       "name": "Empaques Blister",
@@ -102,6 +102,7 @@
         "/src/docs/others-16.png",
         "/src/docs/others-17.png"
       ],
+      "name": "termoformadosjg",
       "description": "Esta es un pequeña galeria"
     }
   },

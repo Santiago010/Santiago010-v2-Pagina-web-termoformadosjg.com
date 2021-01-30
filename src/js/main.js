@@ -32,27 +32,33 @@ const removeChildren = () => {
     containerImagesProducts.removeChild(children);
   });
 };
+let count = 0;
 
 window.addEventListener("load", () => {
   const changeImage = async (quantity = 4) => {
-    let random = Math.floor(Math.random() * quantity);
     try {
       data = await reqData();
-      containerImage.firstElementChild.textContent =
-        data.dataIndex[random].name;
-      containerImage.children[1].textContent =
-        data.dataIndex[random].description;
-      containerImage.lastElementChild.src = data.dataIndex[random].img;
-      containerImage.lastElementChild.setAttribute(
-        "alt",
-        data.dataIndex[random].name
-      );
+      if (count === 4) {
+        count = 0;
+      } else {
+        containerImage.firstElementChild.textContent =
+          data.dataIndex[count].name;
+        containerImage.children[1].textContent =
+          data.dataIndex[count].description;
+        containerImage.lastElementChild.src = data.dataIndex[count].img;
+        containerImage.lastElementChild.setAttribute(
+          "alt",
+          data.dataIndex[count].name
+        );
+        count = count + 1;
+      }
+      console.log(count);
     } catch (error) {
       console.error(error);
     }
   };
 
-  setInterval(changeImage, 4000);
+  setInterval(changeImage, 2500);
 });
 
 btnsProduct.forEach((Element, index) => {
@@ -81,8 +87,10 @@ btnsProduct.forEach((Element, index) => {
     Element.classList.add("select");
     try {
       data = await reqData();
-      const docFragmentSecundary = document.createDocumentFragment(),
-        docFragmentPrimary = document.createDocumentFragment();
+      const docFragmentContainerBoxImage = document.createDocumentFragment();
+      const docFragmentImg = document.createDocumentFragment();
+      let arrayImg = [];
+      let altImg;
 
       data.dataProducts[index].img.map((img) => {
         removeChildren();
@@ -90,13 +98,36 @@ btnsProduct.forEach((Element, index) => {
         boxImage.classList.add("box-image");
         const imageProduct = document.createElement("img");
         imageProduct.classList.add("image-product");
-        imageProduct.setAttribute("alt", data.dataProducts[index].name);
-        imageProduct.src = img;
-        docFragmentSecundary.appendChild(boxImage);
-        docFragmentPrimary.appendChild(imageProduct);
-        boxImage.appendChild(docFragmentPrimary);
+        arrayImg.push(img);
+        altImg = data.dataProducts[index].name;
+
+        docFragmentContainerBoxImage.appendChild(boxImage);
+        docFragmentImg.appendChild(imageProduct);
+        boxImage.appendChild(docFragmentImg);
       });
-      containerImagesProducts.appendChild(docFragmentSecundary);
+      containerImagesProducts.appendChild(docFragmentContainerBoxImage);
+
+      const containerImageProduct = document.querySelectorAll(".image-product");
+
+      containerImageProduct.forEach((img, index) => {
+        const observerImg = new IntersectionObserver(
+          (entries, observer) => {
+            entries
+              .filter((entry) => entry.isIntersecting)
+              .forEach((entry) => {
+                const img = entry.target;
+                img.setAttribute("alt", altImg);
+                img.src = arrayImg[index];
+                observer.disconnect();
+              });
+          },
+          {
+            threshold: 0.2,
+          }
+        );
+        observerImg.observe(img);
+      });
+
       containerImagesProducts.parentElement.lastElementChild.innerHTML =
         data.dataProducts[index].description;
     } catch (error) {
@@ -104,3 +135,14 @@ btnsProduct.forEach((Element, index) => {
     }
   };
 });
+
+// if ("serviceWorker" in navigator) {
+//   navigator.serviceWorker
+//     .register("../../sw.js")
+//     .then((ev) => {
+//       console.log(ev);
+//     })
+//     .catch((error) => {
+//       console.log(error.message);
+//     });
+// }
