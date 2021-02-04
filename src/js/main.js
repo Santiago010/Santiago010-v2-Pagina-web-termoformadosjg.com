@@ -27,73 +27,58 @@ fab.forEach((Element, index) => {
   });
 });
 
-const removeChildren = () => {
-  containerImagesProducts.childNodes.forEach((children) => {
-    containerImagesProducts.removeChild(children);
-  });
-};
-let count = 0;
+window.addEventListener("load", async () => {
+  try {
+    data = await reqData();
+    const dataIndex = await data.dataIndex;
+    let count = 0;
 
-window.addEventListener("load", () => {
-  const changeImage = async (quantity = 4) => {
-    try {
-      data = await reqData();
+    const changeImage = () => {
       if (count === 4) {
         count = 0;
       } else {
-        containerImage.firstElementChild.textContent =
-          data.dataIndex[count].name;
-        containerImage.children[1].textContent =
-          data.dataIndex[count].description;
-        containerImage.lastElementChild.src = data.dataIndex[count].img;
+        containerImage.firstElementChild.textContent = dataIndex[count].name;
+        containerImage.children[1].textContent = dataIndex[count].description;
+        containerImage.lastElementChild.src = dataIndex[count].img;
         containerImage.lastElementChild.setAttribute(
           "alt",
-          data.dataIndex[count].name
+          dataIndex[count].name
         );
-        count = count + 1;
+        count++;
       }
-      console.log(count);
-    } catch (error) {
-      console.error(error);
-    }
-  };
+    };
 
-  setInterval(changeImage, 2500);
+    setInterval(changeImage, 3000);
+  } catch (error) {
+    console.error(error);
+  }
 });
 
 btnsProduct.forEach((Element, index) => {
   if (index === 7) return;
   Element.onclick = async () => {
-    let observerColorBtn;
+    let btnsSelect = Array.prototype.filter.call(btnsProduct, (btn) =>
+      btn.classList.contains("select")
+    );
 
-    if (btnsProduct[0].classList.contains("select")) {
-      observerColorBtn = 0;
-    } else if (btnsProduct[1].classList.contains("select")) {
-      observerColorBtn = 1;
-    } else if (btnsProduct[2].classList.contains("select")) {
-      observerColorBtn = 2;
-    } else if (btnsProduct[3].classList.contains("select")) {
-      observerColorBtn = 3;
-    } else if (btnsProduct[4].classList.contains("select")) {
-      observerColorBtn = 4;
-    } else if (btnsProduct[5].classList.contains("select")) {
-      observerColorBtn = 5;
-    } else if (btnsProduct[6].classList.contains("select")) {
-      observerColorBtn = 6;
-    }
-    if (observerColorBtn !== undefined) {
-      btnsProduct[observerColorBtn].classList.remove("select");
-    }
+    btnsSelect.forEach((btn) => btn.classList.remove("select"));
     Element.classList.add("select");
+
     try {
       data = await reqData();
       const docFragmentContainerBoxImage = document.createDocumentFragment();
       const docFragmentImg = document.createDocumentFragment();
       let arrayImg = [];
       let altImg;
-
+      for (let i = 0; i < containerImagesProducts.childNodes.length; i++) {
+        Array.prototype.forEach.call(
+          containerImagesProducts.children,
+          (children) => {
+            containerImagesProducts.removeChild(children);
+          }
+        );
+      }
       data.dataProducts[index].img.map((img) => {
-        removeChildren();
         const boxImage = document.createElement("div");
         boxImage.classList.add("box-image");
         const imageProduct = document.createElement("img");
@@ -128,21 +113,21 @@ btnsProduct.forEach((Element, index) => {
         observerImg.observe(img);
       });
 
-      containerImagesProducts.parentElement.lastElementChild.innerHTML =
-        data.dataProducts[index].description;
+      containerImagesProducts.parentElement.lastElementChild.innerHTML = `♻${data.dataProducts[index].description} <br />
+          <span class="line-color">Todo en Termoformados</span>`;
     } catch (error) {
       console.error(error);
     }
   };
 });
 
-// if ("serviceWorker" in navigator) {
-//   navigator.serviceWorker
-//     .register("../../sw.js")
-//     .then((ev) => {
-//       console.log(ev);
-//     })
-//     .catch((error) => {
-//       console.log(error.message);
-//     });
-// }
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker
+    .register("../../sw.js")
+    .then((ev) => {
+      console.log(ev.active);
+    })
+    .catch((error) => {
+      console.log(error.message);
+    });
+}

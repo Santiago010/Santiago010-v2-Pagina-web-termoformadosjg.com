@@ -75,16 +75,16 @@
   outline: none;
   background-color: #0066cc;
   transition-property: padding, letter-spacing, cursor, background;
-  transition-duration: 0.6s;
+  transition-duration: 0.3s;
   transition-timing-function: ease-in;
 }
 
 .btn-send:hover {
   cursor: pointer;
-}
-
-.btn-send:focus {
-  background: rgb(0, 105, 250);
+  background: transparent;
+  color: rgba(0, 0, 0, 0.8);
+  border: 0.09375rem dashed rgba(0, 0, 0, 0.8);
+  letter-spacing: 2.5px;
 }
 
 .fa-instagram {
@@ -120,6 +120,7 @@
 .container-data-contact {
   margin: 3em 0;
   padding: 1.5em 2em;
+  min-height: 225px;
   background-color: rgba(125, 125, 125, 0.2);
   border-bottom-left-radius: 0.7em;
   border-top-right-radius: 0.7em;
@@ -255,9 +256,9 @@
     border-radius: 0.6em;
     letter-spacing: 1px;
   }
-  .btn-send:hover {
-    padding: 1.2em 2.2em;
-    letter-spacing: 1.3px;
+
+  .btn-send:focus {
+    padding: 1em 1.2em;
   }
 
   .fa-user,
@@ -295,15 +296,16 @@
 
   .input-form {
     width: 90%;
-    padding: 1.3em;
+    padding: 1em;
     font-size: 1em;
     font-weight: 600;
     letter-spacing: 2px;
   }
 
   .textarea-form {
+    width: 90%;
     height: 15vh;
-    padding: 1.8em;
+    padding: 1em;
     font-size: 1em;
     font-weight: 600;
     letter-spacing: 2px;
@@ -317,10 +319,10 @@
     border-radius: 0.3em;
     letter-spacing: 1.2px;
   }
-  .btn-send:hover {
+  /* .btn-send:hover {
     padding: 1.3em 2.3em;
     letter-spacing: 1.4px;
-  }
+  } */
 
   .fa-user,
   .fa-envelope,
@@ -345,16 +347,15 @@
   }
 
   .input-form {
-    width: min-content;
-    padding: 1.3em;
+    width: 85%;
     font-size: 1em;
     font-weight: 600;
     letter-spacing: 2px;
   }
 
   .textarea-form {
+    width: 85%;
     height: 15vh;
-    padding: 1.8em;
     font-size: 1em;
     font-weight: 600;
     letter-spacing: 2px;
@@ -368,10 +369,6 @@
     border-radius: 0.3em;
     letter-spacing: 1.2px;
   }
-  .btn-send:hover {
-    padding: 1.3em 2.3em;
-    letter-spacing: 1.4px;
-  }
 
   .fa-user,
   .fa-envelope,
@@ -381,7 +378,7 @@
   }
   .fa-instagram {
     font-size: 2.2em;
-    margin-rigth: 0.5em;
+    margin-right: 0.5em;
   }
 
   .fa-instagram:hover {
@@ -406,13 +403,11 @@
   }
 
   .input-form {
-    padding: 1em;
     font-weight: 400;
   }
 
   .textarea-form {
     height: 12vh;
-    padding: 1.5em;
     font-size: 1em;
     font-weight: 400;
   }
@@ -421,9 +416,6 @@
     font-size: 1em;
     margin-top: 1.8em;
     padding: 1em 2.1em;
-  }
-  .btn-send:hover {
-    padding: 1.1em 2.2em;
   }
 
   .fa-user,

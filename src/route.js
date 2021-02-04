@@ -1,44 +1,17 @@
 const { Router } = require("express");
 const nodemailer = require("nodemailer");
 const router = Router();
-const responseHandler = require("./responseHandler.js");
-
-const objectMessage = {
-  error: [
-    "Debes Ingresar todos los datos",
-    "La longitud del nombre no es correcta",
-    "El correo es invalido",
-  ],
-  success:
-    "¡Gracias por contactar con nosotros, estaremos respondiendo lo antes posible!",
-};
 
 router.post("/send-email", async (req, res) => {
   const { name, email, phone, message } = req.body;
-  let resHandler = responseHandler.responseHandler(
-    req.body.name,
-    req.body.email,
-    req.body.phone,
-    req.body.message
-  );
-
-  contentHTML = `
-<h1>Informacion Usuarios</h1>
-<ul>
-<li>nombre : ${name}</li>
-<li>correo : ${email}</li>
-<li>telefono : ${phone}</li>
-</ul>
-<p>${message}</p>   
-`;
 
   const transporter = nodemailer.createTransport({
     host: "mail.termoformadosjg.com",
     port: 587,
     secure: false,
     auth: {
-      user: "gonzaloortiz@termoformadosjg.com",
-      pass: "JnPf!'%<G3Ep[NnE",
+      user: "gonzaloortizpennuela@termoformadosjg.com",
+      pass: "C)m@iRAUvaub",
     },
     tls: {
       rejectUnauthorized: false,
@@ -46,26 +19,69 @@ router.post("/send-email", async (req, res) => {
   });
 
   try {
-    if (resHandler === 0) {
-      throw new Error(objectMessage.error[resHandler]);
-    } else if (resHandler === 1) {
-      throw new Error(objectMessage.error[resHandler]);
-    } else if (resHandler === 2) {
-      throw new Error(objectMessage.error[resHandler]);
-    }
+    const objectInfodata = {
+      name: "",
+      email: "",
+      phone: "",
+      message: "",
+    };
+
+    const handler = {
+      set(obj, prop, value) {
+        if (
+          (prop === "name" && !/^[A-Za-zÑñÁáÉeÍíÓóÜü\s]+$/g.test(value)) ||
+          (prop === "name" && value.length < 3) ||
+          value.length > 40
+        ) {
+          throw new Error("El nombre es invalido");
+        } else if (prop === "email" && !/\w+@\w+\.+[a-z]/.test(value)) {
+          throw new Error("El correo es invalido");
+        } else if (
+          (prop === "phone" && isNaN(value)) ||
+          (prop === "phone" && value.length < 7)
+        ) {
+          throw new Error("El numero es invalido");
+        }
+        obj[prop] = value;
+      },
+    };
+
+    const p = new Proxy(objectInfodata, handler);
+    p.name = name;
+    p.email = email;
+    p.phone = phone;
+    p.message = message;
+
+    contentHTML = `
+        <h1>Informacion de usuario</h1>
+        <ul>
+            <li>Nombre: ${name}</li>
+            <li>Correo: ${email}</li>
+            <li>Telefono: ${phone}</li>
+        </ul>
+        <p>Mensaje: ${message}</p>
+    `;
+
     const info = await transporter.sendMail({
-      from: "'Pagina Web <gonzaloortiz@termoformadosjg.com>",
-      to: "termoformados.jg@hotmail.com",
+      from: '"Pagina web" <gonzaloortizpennuela@termoformadosjg.com>',
+      to: "santiago.dev06@gmail.com",
       subject: "Correo enviado desde el formulario de contacto",
       html: contentHTML,
     });
-    console.log(info);
-    res.json({ state: "success", response: objectMessage.success });
-  } catch (err) {
+    res.json({
+      state: "success",
+      response:
+        "¡Gracias por contactar con nosotros, estaremos respondiendo lo antes posible!",
+      info: info,
+    });
+    console.info(p);
+  } catch (error) {
     res.json({
       state: "error",
-      response: objectMessage.error[resHandler],
+      response: error.message,
     });
+    console.error(error.message);
   }
 });
+
 module.exports = router;
