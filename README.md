@@ -2,4 +2,4 @@
 
 #este proyecto es un rediseño y refactorizacion de la pagina de termoformadosjg.com
 
-#para correr el proyecto hay que instalar las dependencias de desarrollo
+#puedes ver el resultado en el siguiente link : https://termoformadosjg.com/
