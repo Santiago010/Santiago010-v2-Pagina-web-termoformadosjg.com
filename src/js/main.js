@@ -120,14 +120,3 @@ btnsProduct.forEach((Element, index) => {
     }
   };
 });
-
-if ("serviceWorker" in navigator) {
-  navigator.serviceWorker
-    .register("../../sw.js")
-    .then((ev) => {
-      console.log(ev.active);
-    })
-    .catch((error) => {
-      console.log(error.message);
-    });
-}

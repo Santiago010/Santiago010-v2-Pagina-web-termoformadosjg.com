@@ -4,6 +4,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 100vh;
 }
 
 .paragraph-product {
@@ -11,6 +12,9 @@
   font-family: "Quicksand", sans-serif;
   color: #1d1d1f;
   letter-spacing: -1px;
+  font-weight: 700;
+  font-size: 2.2em;
+  text-align: center;
 }
 
 .parapraph-info {
@@ -19,13 +23,20 @@
   font-family: "Open Sans", sans-serif;
   color: #0066cc;
   text-align: center;
+  font-size: 1.3em;
+  line-height: 25px;
+  letter-spacing: -0.5px;
 }
 
 .container-images img {
   object-fit: scale-down;
+  filter: drop-shadow(1px 1px 8px #292828);
+  margin: 3em 0;
+  width: 800px;
+  height: 450px;
 }
 
-@media screen and (min-width: 800px) {
+/* @media screen and (min-width: 800px) {
   .container-images {
     height: 100vh;
   }
@@ -47,9 +58,9 @@
     width: 800px;
     height: 450px;
   }
-}
+} */
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 900px) {
   .container-images {
     height: 60vh;
   }

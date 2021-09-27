@@ -5,6 +5,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
+  padding-top: 5.5em;
 }
 
 .container-form {
@@ -17,6 +18,8 @@
   border-top-right-radius: 0.7em;
   display: flex;
   justify-content: flex-end;
+  min-width: 900px;
+  min-height: 550px;
 }
 
 .container-form form {
@@ -26,15 +29,20 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 500px;
 }
 
 .paragraph-form {
   font-family: "Overlock", cursive;
   color: rgba(0, 0, 0, 0.8);
+  font-size: 2.2em;
+  font-weight: 600;
+  letter-spacing: -1px;
 }
 
 .section-form {
   width: 100%;
+  border-bottom: 1.7px solid rgba(0, 0, 0, 0.7);
 }
 
 .input-form {
@@ -45,6 +53,11 @@
   transition-property: background;
   transition-duration: 1s;
   transition-timing-function: ease-in;
+  padding: 1.5em;
+  width: 90%;
+  font-size: 0.8em;
+  font-weight: 800;
+  letter-spacing: 2px;
 }
 
 .input-form:focus {
@@ -54,6 +67,7 @@
 }
 
 .textarea-form {
+  resize: none;
   background: transparent;
   border: none;
   outline: none;
@@ -61,6 +75,12 @@
   transition-property: background;
   transition-duration: 1s;
   transition-timing-function: ease-in;
+  width: 90%;
+  height: 20vh;
+  padding: 2em;
+  font-size: 0.8em;
+  font-weight: 800;
+  letter-spacing: 2px;
 }
 
 .textarea-form:focus {
@@ -77,6 +97,12 @@
   transition-property: padding, letter-spacing, cursor, background;
   transition-duration: 0.3s;
   transition-timing-function: ease-in;
+  font-weight: 500;
+  font-size: 1em;
+  margin-top: 1em;
+  padding: 1em 2em;
+  border-radius: 0.6em;
+  letter-spacing: 1px;
 }
 
 .btn-send:hover {
@@ -85,6 +111,7 @@
   color: rgba(0, 0, 0, 0.8);
   border: 0.09375rem dashed rgba(0, 0, 0, 0.8);
   letter-spacing: 2.5px;
+  padding: 1em 1.2em;
 }
 
 .fa-instagram {
@@ -153,6 +180,7 @@
 .social-media-item {
   display: flex;
   align-items: center;
+  height: 2em;
 }
 
 .social-media-item p {
@@ -191,6 +219,13 @@
   font-size: 0.9em;
 }
 
+.fa-user,
+.fa-envelope,
+.fa-phone-square,
+.fa-comments {
+  font-size: 1.8em;
+}
+
 .fa-recycle {
   font-size: 3.5em;
   animation: animationRecycle 0.5s linear infinite alternate;
@@ -209,7 +244,7 @@
   }
 }
 
-@media screen and (min-width: 800px) {
+/* @media screen and (min-width: 800px) {
   .container-contact {
     padding-top: 5.5em;
   }
@@ -261,13 +296,8 @@
     padding: 1em 1.2em;
   }
 
-  .fa-user,
-  .fa-envelope,
-  .fa-phone-square,
-  .fa-comments {
-    font-size: 1.8em;
-  }
-}
+
+} */
 
 @media screen and (max-width: 800px) {
   .container-contact {

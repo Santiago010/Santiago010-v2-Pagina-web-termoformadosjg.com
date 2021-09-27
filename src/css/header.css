@@ -16,22 +16,29 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  min-width: 50%;
 }
 
 .container-icon-title img {
   filter: blur(0.5px);
+  width: 4em;
+  height: 3.5em;
+  margin: 0 1em;
 }
 
 .container-icon-title h1 {
   font-family: "Overlock", cursive;
   font-weight: 400;
   color: #f8f1f1;
+  font-size: 1.5em;
+  margin: 0 1em;
 }
 
 .container-sections {
   display: flex;
   align-items: center;
   justify-content: center;
+  min-width: 50%;
 }
 
 .container-sections a {
@@ -40,9 +47,17 @@
   font-family: "Overlock", cursive;
   transition-property: font-size, letter-spacing, text-shadow;
   transition-duration: 0.5s;
+  margin: 0 1em;
+  letter-spacing: -1px;
+  font-size: 1.3em;
 }
 
-@media screen and (min-width: 800px) {
+.container-sections a:hover {
+  font-size: 1.5em;
+  letter-spacing: 2px;
+}
+
+/* @media screen and (min-width: 800px) {
   .container-icon-title {
     max-width: max-content;
   }
@@ -72,7 +87,7 @@
     font-size: 1.5em;
     letter-spacing: 2px;
   }
-}
+} */
 
 @media screen and (max-width: 800px) {
   .container-icon-title {

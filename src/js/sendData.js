@@ -5,7 +5,7 @@ export default function sendData() {
     ev.preventDefault();
     const dataUSer = new FormData(ev.currentTarget);
 
-    fetch("/send-email", {
+    fetch("https://formjg.herokuapp.com/send-email", {
       method: "POST",
       body: JSON.stringify({
         name: dataUSer.get("name"),
